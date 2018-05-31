@@ -4,7 +4,7 @@ WORKDIR /app
 RUN git clone ${url}
 
 FROM maven:3.2-jdk-8 as build
-ARG project 
+ARG project
 WORKDIR /app
 COPY --from=clone /app/${project} /app
 RUN mvn package
